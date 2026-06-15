@@ -19,6 +19,18 @@
 @mixin section {
   padding: 80px 0;
 }
+
+@mixin container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
 /* Mobile */
 
 @mixin mobile {

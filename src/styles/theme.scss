@@ -1,2 +1,4 @@
 @forward "./variables";
 @forward "./mixins";
+// Include the reset and component CSS so they are emitted into the
+// final stylesheet when importing `theme.scss`.

@@ -1,27 +1,73 @@
 <header class="navbar">
-  <div class="container">
+  <div class="navbar-container container">
+    <!-- Mobile Menu -->
+
+    <button
+      class="menu-btn"
+      aria-label="Menu"
+      (click)="isMenuOpen = !isMenuOpen"
+    >
+      <span class="material-icons"> menu </span>
+    </button>
+
+    <!-- Logo -->
+
     <div class="logo">
-      <a routerLink="/">ATOMICS</a>
+      <a routerLink="/"> atomics.in </a>
     </div>
 
-    <nav class="nav-links">
-      <a routerLink="/">Home</a>
-      <a routerLink="/products">Shop</a>
-      <a routerLink="/categories">Categories</a>
-      <a routerLink="/new-arrivals">New Arrivals</a>
-      <a routerLink="/about">About</a>
-    </nav>
+    <!-- Actions -->
 
     <div class="nav-actions">
-      <div class="search-box">
-        <input type="text" placeholder="Search products..." />
-      </div>
+      <button class="cart-btn" aria-label="Cart">
+        <span class="material-icons"> home </span>
+      </button>
 
-      <button class="icon-btn">♡</button>
+      <button class="cart-btn" aria-label="Profile">
+        <span class="material-icons"> account_circle </span>
+      </button>
 
-      <button class="icon-btn">🛒</button>
-
-      <button class="icon-btn">👤</button>
+      <button class="cart-btn" aria-label="Cart">
+        <span class="material-icons"> shopping_cart </span>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- Overlay -->
+@if (isMenuOpen) {
+  <div class="overlay" (click)="isMenuOpen = false"></div>
+}
+
+<!-- Drawer -->
+
+<aside class="mobile-drawer" [class.open]="isMenuOpen">
+  <div class="drawer-arrow-container">
+    <button class="close-btn" (click)="isMenuOpen = false">
+      <span class="material-icons"> chevron_left </span>
+    </button>
+  </div>
+
+  <div class="drawer-header">
+    <div class="drawer-profile-container">
+      <button class="cart-btn sidenav-profile-icon" aria-label="Profile">
+        <span class="material-icons"> account_circle </span>
+      </button>
+      <h2>Shabareenath</h2>
+    </div>
+  </div>
+
+  <nav class="drawer-nav">
+    <a routerLink="/" (click)="isMenuOpen = false"> Home </a>
+
+    <a routerLink="/products" (click)="isMenuOpen = false"> Shop </a>
+
+    <a routerLink="/categories" (click)="isMenuOpen = false"> Categories </a>
+
+    <a routerLink="/orders" (click)="isMenuOpen = false"> Orders </a>
+
+    <a routerLink="/profile" (click)="isMenuOpen = false"> Profile </a>
+
+    <a routerLink="/cart" (click)="isMenuOpen = false"> Cart </a>
+  </nav>
+</aside>
