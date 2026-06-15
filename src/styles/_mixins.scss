@@ -1,0 +1,52 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin card {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+}
+
+@mixin section {
+  padding: 80px 0;
+}
+/* Mobile */
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+/* Tablet */
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+/* Tablet Only */
+
+@mixin tablet-only {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+/* Desktop */
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}

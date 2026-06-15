@@ -1,0 +1,52 @@
+:root {
+  /* Mobile */
+  --bp-mobile: 768px;
+
+  /* Tablet */
+  --bp-tablet: 1024px;
+
+  /* Desktop */
+  --bp-desktop: 1440px;
+  /* Background */
+
+  --bg-primary: #0f1115;
+  --bg-secondary: #171a21;
+  --bg-tertiary: #1f2430;
+
+  /* Surface */
+
+  --surface-primary: #171a21;
+  --surface-secondary: #202632;
+
+  /* Text */
+
+  --text-primary: #ffffff;
+  --text-secondary: #c5cbd5;
+  --text-muted: #8c95a3;
+
+  /* Brand */
+
+  --accent-primary: #d4af37;
+  --accent-hover: #e8c75f;
+
+  /* Border */
+
+  --border-primary: #2d3442;
+
+  /* Radius */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Shadow */
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.35);
+
+  /* Layout */
+
+  --container-width: 1400px;
+}
