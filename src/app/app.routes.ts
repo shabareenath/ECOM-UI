@@ -42,7 +42,11 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./routes/admin.routes').then((m) => m.ADMIN_ROUTES),
   },
-
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('././routes/profile.routes').then((m) => m.PROFILE_ROUTES),
+  },
   {
     path: '**',
     redirectTo: '',

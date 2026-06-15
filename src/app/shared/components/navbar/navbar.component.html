@@ -20,15 +20,21 @@
 
     <div class="nav-actions">
       <button class="cart-btn" aria-label="Cart">
-        <span class="material-icons"> home </span>
+        <a href="/home">
+          <span class="material-icons"> home </span>
+        </a>
       </button>
 
       <button class="cart-btn" aria-label="Profile">
-        <span class="material-icons"> account_circle </span>
+        <a href="/profile">
+          <span class="material-icons"> account_circle </span>
+        </a>
       </button>
 
       <button class="cart-btn" aria-label="Cart">
-        <span class="material-icons"> shopping_cart </span>
+        <a href="/cart">
+          <span class="material-icons"> shopping_cart </span>
+        </a>
       </button>
     </div>
   </div>
@@ -61,8 +67,6 @@
     <a routerLink="/" (click)="isMenuOpen = false"> Home </a>
 
     <a routerLink="/products" (click)="isMenuOpen = false"> Shop </a>
-
-    <a routerLink="/categories" (click)="isMenuOpen = false"> Categories </a>
 
     <a routerLink="/orders" (click)="isMenuOpen = false"> Orders </a>
 
