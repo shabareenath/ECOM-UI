@@ -7,7 +7,7 @@ import { Order } from '../../../core/models/order.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './admin-order-card.component.html',
-  styleUrls: ['./admin-order-card.component.scss']
+  styleUrls: ['./admin-order-card.component.scss'],
 })
 export class AdminOrderCardComponent implements OnInit {
   @Input() order?: Order;

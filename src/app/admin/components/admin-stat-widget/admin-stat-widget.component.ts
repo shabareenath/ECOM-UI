@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './admin-stat-widget.component.html',
-  styleUrls: ['./admin-stat-widget.component.scss']
+  styleUrls: ['./admin-stat-widget.component.scss'],
 })
 export class AdminStatWidgetComponent implements OnInit {
   @Input() title = '';

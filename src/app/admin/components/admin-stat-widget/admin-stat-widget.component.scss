@@ -1,4 +1,15 @@
 /* Styles for admin stat widget */
-.admin-stat-widget { padding: .75rem; border: 1px solid #eee; border-radius: 4px; text-align: center; }
-.admin-stat-widget .title { font-size: .9rem; color: #666; }
-.admin-stat-widget .value { font-size: 1.25rem; font-weight: 600; }
+.admin-stat-widget {
+  padding: 0.75rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  text-align: center;
+}
+.admin-stat-widget .title {
+  font-size: 0.9rem;
+  color: #666;
+}
+.admin-stat-widget .value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}

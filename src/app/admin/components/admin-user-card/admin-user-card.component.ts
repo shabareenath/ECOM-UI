@@ -7,7 +7,7 @@ import { User } from '../../../core/models/user.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './admin-user-card.component.html',
-  styleUrls: ['./admin-user-card.component.scss']
+  styleUrls: ['./admin-user-card.component.scss'],
 })
 export class AdminUserCardComponent implements OnInit {
   @Input() user?: User;

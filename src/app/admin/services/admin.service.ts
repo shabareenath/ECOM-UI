@@ -12,7 +12,7 @@ export class AdminService {
   constructor(
     private productApi: ProductService,
     private orderApi: OrderService,
-    private authApi: AuthService
+    private authApi: AuthService,
   ) {}
 
   listProducts(): Observable<Product[]> {

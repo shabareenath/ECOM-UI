@@ -4,7 +4,7 @@ import { Order } from '../../../../core/models/order.model';
 @Component({
   selector: 'app-order-card',
   templateUrl: './order-card.component.html',
-  styleUrls: ['./order-card.component.scss']
+  styleUrls: ['./order-card.component.scss'],
 })
 export class OrderCardComponent implements OnInit {
   @Input() order?: Order;

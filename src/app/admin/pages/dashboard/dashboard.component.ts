@@ -11,10 +11,10 @@ import { AdminUserCardComponent } from '../../components/admin-user-card/admin-u
     AdminStatWidgetComponent,
     AdminProductCardComponent,
     AdminOrderCardComponent,
-    AdminUserCardComponent
+    AdminUserCardComponent,
   ],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class AdminDashboardComponent implements OnInit {
   constructor() {}

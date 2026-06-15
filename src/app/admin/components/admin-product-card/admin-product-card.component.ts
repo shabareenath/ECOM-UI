@@ -7,7 +7,7 @@ import { Product } from '../../../core/models/product.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './admin-product-card.component.html',
-  styleUrls: ['./admin-product-card.component.scss']
+  styleUrls: ['./admin-product-card.component.scss'],
 })
 export class AdminProductCardComponent implements OnInit {
   @Input() product?: Product;
