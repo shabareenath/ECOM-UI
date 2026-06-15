@@ -1,59 +1,308 @@
-# EcomUi
+# Angular E-Commerce Frontend Architecture
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+## Project Structure
 
-## Development server
+```text
+src/
+└── app/
 
-To start a local development server, run:
+    ├── core/
+    │   ├── services/
+    │   │   ├── api.service.ts
+    │   │   ├── auth.service.ts
+    │   │   ├── product.service.ts
+    │   │   ├── cart.service.ts
+    │   │   └── order.service.ts
+    │   │
+    │   ├── interceptors/
+    │   │   ├── auth.interceptor.ts
+    │   │   └── error.interceptor.ts
+    │   │
+    │   ├── guards/
+    │   │   ├── auth.guard.ts
+    │   │   └── admin.guard.ts
+    │   │
+    │   └── models/
+    │       ├── product.model.ts
+    │       ├── category.model.ts
+    │       ├── cart.model.ts
+    │       ├── order.model.ts
+    │       └── user.model.ts
+    │
+    │
+    ├── shared/
+    │   ├── components/
+    │   │   ├── navbar/
+    │   │   ├── footer/
+    │   │   ├── loader/
+    │   │   ├── pagination/
+    │   │   ├── search-bar/
+    │   │   ├── product-card/
+    │   │   ├── category-card/
+    │   │   ├── image-carousel/
+    │   │   ├── quantity-selector/
+    │   │   ├── confirmation-dialog/
+    │   │   └── empty-state/
+    │   │
+    │   ├── directives/
+    │   └── pipes/
+    │
+    │
+    ├── layout/
+    │   ├── customer-layout/
+    │   ├── admin-layout/
+    │   ├── header/
+    │   ├── sidebar/
+    │   └── breadcrumb/
+    │
+    │
+        ├── features/
 
-```bash
-ng serve
+        │   ├── home/
+        │   │   ├── pages/
+        │   │   │   └── home-page/
+        │   │   │
+        │   │   └── components/
+        │   │       ├── hero-banner/
+        │   │       ├── featured-products/
+        │   │       ├── categories-section/
+        │   │       ├── trending-products/
+        │   │       ├── offer-banner/
+        │   │       └── testimonials/
+        │   │
+        │   │
+        │   ├── products/
+        │   │   ├── pages/
+        │   │   │   ├── product-list/
+        │   │   │   └── product-details/
+        │   │   │
+        │   │   ├── components/
+        │   │   │   ├── product-card/
+        │   │   │   ├── product-filter/
+        │   │   │   ├── product-sort/
+        │   │   │   ├── product-gallery/
+        │   │   │   ├── product-info/
+        │   │   │   ├── product-specification/
+        │   │   │   ├── product-review/
+        │   │   │   ├── product-rating/
+        │   │   │   ├── related-products/
+        │   │   │   └── product-search/
+        │   │   │
+        │   │   ├── services/
+        │   │   │   └── product.service.ts
+        │   │   │
+        │   │   └── models/
+        │   │       └── product.model.ts
+        │   │
+        │   │
+        │   ├── cart/
+        │   │   ├── pages/
+        │   │   │   └── cart-page/
+        │   │   │
+        │   │   ├── components/
+        │   │   │   ├── cart-item/
+        │   │   │   ├── cart-summary/
+        │   │   │   ├── coupon-box/
+        │   │   │   └── shipping-estimator/
+        │   │   │
+        │   │   └── services/
+        │   │       └── cart.service.ts
+        │   │
+        │   │
+        │   ├── checkout/
+        │   │   ├── pages/
+        │   │   │   └── checkout-page/
+        │   │   │
+        │   │   └── components/
+        │   │       ├── address-form/
+        │   │       ├── payment-method/
+        │   │       ├── shipping-method/
+        │   │       ├── review-order/
+        │   │       └── order-summary/
+        │   │
+        │   │
+        │   ├── orders/
+        │   │   ├── pages/
+        │   │   │   ├── my-orders/
+        │   │   │   └── order-details/
+        │   │   │
+        │   │   └── components/
+        │   │       ├── order-card/
+        │   │       ├── order-status/
+        │   │       └── tracking-timeline/
+        │   │
+        │   │
+        │   └── auth/
+        │       ├── pages/
+        │       │   ├── login/
+        │       │   ├── register/
+        │       │   ├── forgot-password/
+        │       │   └── reset-password/
+        │       │
+        │       └── components/
+        │           ├── login-form/
+        │           ├── register-form/
+        │           └── social-login/
+    │
+    │
+    ├── admin/
+    │
+    │   ├── dashboard/
+    │   │   ├── dashboard-page/
+    │   │   ├── sales-chart/
+    │   │   ├── revenue-card/
+    │   │   ├── order-stats/
+    │   │   └── top-products/
+    │   │
+    │   ├── products/
+    │   │   ├── product-management/
+    │   │   ├── add-product/
+    │   │   ├── edit-product/
+    │   │   ├── product-table/
+    │   │   └── product-form/
+    │   │
+    │   ├── categories/
+    │   │   ├── category-list/
+    │   │   ├── add-category/
+    │   │   └── edit-category/
+    │   │
+    │   ├── orders/
+    │   │   ├── order-list/
+    │   │   ├── order-details/
+    │   │   └── order-status-update/
+    │   │
+    │   ├── users/
+    │   │   ├── user-list/
+    │   │   ├── user-details/
+    │   │   └── user-management/
+    │   │
+    │   └── inventory/
+    │       ├── stock-list/
+    │       ├── stock-update/
+    │       └── low-stock-alert/
+    │
+    │
+    ├── app.routes.ts
+    ├── app.config.ts
+    └── app.component.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+# Customer Routes
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+/                       -> Home
+/products               -> Product Listing
+/products/:id           -> Product Details
+/cart                   -> Cart
+/checkout               -> Checkout
+/orders                 -> My Orders
+/orders/:id             -> Order Details
+/login                  -> Login
+/register               -> Register
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+# Admin Routes
+
+```text
+/admin/dashboard
+/admin/products
+/admin/products/add
+/admin/products/edit/:id
+/admin/categories
+/admin/orders
+/admin/users
+/admin/inventory
 ```
 
-## Building
+---
 
-To build the project run:
+# Backend APIs
 
-```bash
-ng build
+```text
+/api/auth/login
+/api/auth/register
+
+/api/products
+/api/products/{id}
+
+/api/categories
+
+/api/cart
+
+/api/orders
+/api/orders/{id}
+
+/api/users
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+# Deployment Architecture
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+```text
+Customer Browser
+        │
+        ▼
+Angular Frontend
+(shop.example.com)
+        │
+        ▼
+Spring Boot API
+(api.example.com)
+        │
+        ▼
+PostgreSQL Database
 
-```bash
-ng test
+Admin Browser
+        │
+        ▼
+Angular Admin
+(admin.example.com)
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+# MVP Components (Build First)
 
-```bash
-ng e2e
+```text
+Navbar
+Footer
+
+HomePage
+
+ProductList
+ProductDetails
+ProductCard
+
+CartPage
+CartItem
+
+LoginPage
+
+AdminDashboard
+
+ProductManagement
+AddProduct
+
+ProductService
+CartService
+AuthService
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+After MVP:
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```text
+Checkout
+Orders
+Reviews
+Ratings
+Wishlist
+Coupons
+Inventory
+Analytics
+User Management
+```

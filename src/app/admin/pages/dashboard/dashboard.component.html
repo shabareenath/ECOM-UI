@@ -1,0 +1,30 @@
+<section class="admin-dashboard">
+	<h2>Admin Dashboard</h2>
+
+	<div class="stats">
+		<app-admin-stat-widget title="Total Orders" [value]="128"></app-admin-stat-widget>
+		<app-admin-stat-widget title="Total Users" [value]="542"></app-admin-stat-widget>
+		<app-admin-stat-widget title="Total Products" [value]="84"></app-admin-stat-widget>
+	</div>
+
+	<div class="dashboard-grid">
+		<div class="card recent-products">
+			<h3>Recent Products</h3>
+			<app-admin-product-card></app-admin-product-card>
+			<app-admin-product-card></app-admin-product-card>
+			<app-admin-product-card></app-admin-product-card>
+		</div>
+
+		<div class="card recent-orders">
+			<h3>Recent Orders</h3>
+			<app-admin-order-card></app-admin-order-card>
+			<app-admin-order-card></app-admin-order-card>
+		</div>
+
+		<div class="card recent-users">
+			<h3>Recent Users</h3>
+			<app-admin-user-card></app-admin-user-card>
+			<app-admin-user-card></app-admin-user-card>
+		</div>
+	</div>
+</section>
