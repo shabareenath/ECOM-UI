@@ -1,1 +1,20 @@
-<!-- product-sort placeholder -->
+<div class="sort-container">
+  <button class="sort-btn" (click)="isOpen = !isOpen">
+    Sort By
+
+    <span class="material-icons"> expand_more </span>
+  </button>
+
+  @if (isOpen) {
+    <div class="sort-dropdown">
+      <button (click)="selectSort('Latest')">Latest</button>
+
+      <button (click)="selectSort('Popularity')">Popularity</button>
+
+      <button (click)="selectSort('Price Low-High')">Price Low-High</button>
+
+      <button (click)="selectSort('Price High-Low')">Price High-Low</button>
+      <button (click)="selectSort('Ratings')">Top Rated</button>
+    </div>
+  }
+</div>

@@ -1,1 +1,74 @@
-/* product-sort styles placeholder */
+.sort-container {
+  position: relative;
+
+  width: fit-content;
+
+  margin-left: auto;
+
+  margin-bottom: 1.5rem;
+}
+
+.sort-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  padding: 0.75rem 1rem;
+
+  border: 1px solid var(--border-primary);
+
+  border-radius: 10px;
+
+  background: var(--surface-primary);
+
+  color: var(--text-primary);
+
+  cursor: pointer;
+
+  font-size: 0.9rem;
+}
+
+.sort-dropdown {
+  position: absolute;
+
+  top: calc(100% + 8px);
+
+  right: 0;
+
+  width: 220px;
+
+  background: var(--surface-primary);
+
+  border: 1px solid var(--border-primary);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  z-index: 100;
+}
+
+.sort-dropdown button {
+  width: 100%;
+
+  padding: 1rem;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.sort-dropdown button:hover {
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+}
