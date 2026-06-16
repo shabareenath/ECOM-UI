@@ -1,1 +1,68 @@
-<!-- product-filter placeholder -->
+<div class="filter-container">
+  <button class="filter-btn" (click)="isOpen = !isOpen">
+    Filters
+
+    <span class="material-icons"> tune </span>
+  </button>
+
+  @if (isOpen) {
+    <div class="filter-dropdown">
+      <div class="filter-section">
+        <h4>Categories</h4>
+
+        <label>
+          <input type="checkbox" />
+          Oversized
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          Graphic
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          Essentials
+        </label>
+      </div>
+
+      <div class="filter-section">
+        <h4>Price</h4>
+
+        <label>
+          <input type="checkbox" />
+          Under ₹999
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          ₹999 - ₹1499
+        </label>
+      </div>
+
+      <div class="filter-section">
+        <h4>Size</h4>
+
+        <label>
+          <input type="checkbox" />
+          S
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          M
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          L
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          XL
+        </label>
+      </div>
+    </div>
+  }
+</div>
