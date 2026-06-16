@@ -1,1 +1,43 @@
-<!-- featured-products placeholder -->
+<section class="featured-products">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"> FEATURED </span>
+
+      <h2>Featured Products</h2>
+
+      <p>Handpicked essentials from our latest collection.</p>
+    </div>
+
+    <div class="products-grid">
+      @for (product of products; track product.id) {
+        <article class="product-card">
+          <div class="product-image">
+            <span class="product-badge"> NEW </span>
+
+            <img [src]="product.image" [alt]="product.name" />
+          </div>
+
+          <div class="product-content">
+            <div class="product-name-class">
+              <h3>
+                {{ product.name }}
+              </h3>
+            </div>
+
+            <div class="product-footer">
+              <span class="product-price"> ₹{{ product.price }} </span>
+
+              <button class="add-cart-btn">Add To Cart</button>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="section-action">
+      <a href="/products">
+        <button class="view-all-btn">View All</button>
+      </a>
+    </div>
+  </div>
+</section>

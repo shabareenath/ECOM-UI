@@ -5,8 +5,6 @@
 ===================================== */
 
 .hero {
-  min-height: calc(100vh - 72px);
-
   display: flex;
   align-items: center;
 
@@ -31,16 +29,12 @@
   gap: 4rem;
 
   width: 100%;
-
-  min-width: 0;
 }
 
 .hero-content {
-  flex: 1 1 50%;
+  flex: 1;
 
-  max-width: 600px;
-
-  min-width: 0;
+  max-width: 500px;
 
   display: flex;
   flex-direction: column;
@@ -97,8 +91,6 @@
 .hero p {
   margin: 0;
 
-  max-width: 550px;
-
   color: var(--text-secondary);
 
   font-size: 1.1rem;
@@ -116,6 +108,10 @@
   gap: 1rem;
 
   margin-top: 0.5rem;
+}
+
+.hero-actions a {
+  text-decoration: none;
 }
 
 .hero-actions button {
@@ -143,10 +139,9 @@
 }
 
 .btn-secondary {
-  background: transparent;
+  background: #20242d;
 
   border: 1px solid var(--border-primary);
-  background-color: #20242d;
 
   color: var(--text-primary);
 }
@@ -156,55 +151,11 @@
 }
 
 /* =====================================
-   TRUST FEATURES
-===================================== */
-
-.hero-features {
-  display: flex;
-
-  gap: 2rem;
-
-  margin-top: 1rem;
-
-  flex-wrap: wrap;
-}
-
-.feature {
-  position: relative;
-
-  color: var(--text-secondary);
-
-  font-size: 0.9rem;
-
-  padding-left: 1rem;
-}
-
-.feature::before {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  top: 50%;
-
-  width: 6px;
-  height: 6px;
-
-  border-radius: 50%;
-
-  background: var(--accent-primary);
-
-  transform: translateY(-50%);
-}
-
-/* =====================================
    IMAGE
 ===================================== */
 
 .hero-image {
-  flex: 1 1 50%;
-
-  min-width: 0;
+  flex: 2;
 
   position: relative;
 
@@ -215,12 +166,14 @@
   align-items: center;
 }
 
-.hero-image img {
-  display: block;
+.hero-image a {
+  width: 100%;
+}
 
+.hero-image img {
   width: 100%;
 
-  //   max-width: 650px;
+  display: block;
 
   height: auto;
 
@@ -245,45 +198,19 @@
 
   transform: translate(-50%, -50%);
 
-  //   width: 700px;
-  //   height: 700px;
+  width: 900px;
+  height: 900px;
 
   border-radius: 50%;
 
   background: radial-gradient(
     circle,
-    rgba(212, 175, 55, 0.2) 0%,
-    rgba(212, 175, 55, 0.1) 35%,
+    rgba(212, 175, 55, 0.15) 0%,
+    rgba(212, 175, 55, 0.08) 35%,
     transparent 75%
   );
 
-  filter: blur(120px);
-
-  z-index: 1;
-
-  pointer-events: none;
-}
-
-/* =====================================
-   SECONDARY GLOW
-===================================== */
-
-.hero-image::after {
-  content: "";
-
-  position: absolute;
-
-  bottom: 10%;
-  right: 15%;
-
-  //   width: 200px;
-  //   height: 200px;
-
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.05);
-
-  filter: blur(80px);
+  filter: blur(140px);
 
   z-index: 1;
 
@@ -298,9 +225,9 @@
   .hero-container {
     flex-direction: column-reverse;
 
-    gap: 2rem;
-
     text-align: center;
+
+    gap: 2rem;
   }
 
   .hero-content {
@@ -313,16 +240,8 @@
     margin-inline: auto;
   }
 
-  .hero-features {
-    justify-content: center;
-  }
-
   .hero-image {
     width: 100%;
-  }
-
-  .hero-image img {
-    // max-width: 500px;
   }
 }
 
@@ -349,22 +268,12 @@
     width: 100%;
   }
 
-  .hero-image img {
-    // max-width: 350px;
+  .hero-image {
+    width: 100%;
   }
 
   .hero-image::before {
-    // width: 450px;
-    // height: 450px;
+    width: 500px;
+    height: 500px;
   }
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  overflow-x: hidden;
 }
