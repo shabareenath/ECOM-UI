@@ -1,1 +1,167 @@
-/* testimonials styles placeholder */
+@use "../../../../../styles/mixins" as *;
+
+/* =====================================
+   SECTION
+===================================== */
+
+.testimonials {
+  padding: 40px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-tag {
+  color: var(--accent-primary);
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.section-header h2 {
+  margin: 1rem 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.section-header p {
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  color: var(--text-secondary);
+
+  line-height: 1.8;
+}
+
+/* =====================================
+   GRID
+===================================== */
+
+.testimonial-grid {
+  display: flex;
+
+  gap: 1.5rem;
+
+  flex-wrap: wrap;
+}
+
+/* =====================================
+   CARD
+===================================== */
+
+.testimonial-card {
+  flex: 1 1 calc(33.33% - 1rem);
+
+  min-width: 280px;
+
+  padding: 2rem;
+
+  background: var(--surface-primary);
+
+  border: 1px solid var(--border-primary);
+
+  border-radius: 20px;
+
+  transition: 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.rating {
+  color: var(--accent-primary);
+
+  font-size: 1.2rem;
+
+  margin-bottom: 1rem;
+}
+
+.review {
+  color: var(--text-secondary);
+
+  line-height: 1.8;
+
+  margin-bottom: 2rem;
+
+  min-height: 120px;
+}
+
+/* =====================================
+   CUSTOMER
+===================================== */
+
+.customer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.customer-avatar {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--accent-primary);
+
+  color: #000;
+
+  font-weight: 700;
+}
+
+.customer h4 {
+  margin: 0;
+
+  color: var(--text-primary);
+}
+
+.customer span {
+  color: var(--text-secondary);
+
+  font-size: 0.85rem;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@include tablet {
+  .testimonial-card {
+    flex: 1 1 calc(50% - 0.75rem);
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@include mobile {
+  .testimonial-card {
+    flex: 1 1 100%;
+  }
+
+  .review {
+    min-height: auto;
+  }
+}
