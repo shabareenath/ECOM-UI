@@ -1,1 +1,53 @@
-/* offers-banner styles placeholder */
+@use "../../../../../styles/mixins" as *;
+
+.offer-banner {
+  margin: 6rem 0;
+
+  position: relative;
+}
+
+.offer-content {
+  padding: 20px 24px;
+
+  text-align: center;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.12),
+    rgba(212, 175, 55, 0.03)
+  );
+
+  border: 1px solid rgba(212, 175, 55, 0.15);
+
+  overflow: hidden;
+}
+
+.offer-tag {
+  color: var(--accent-primary);
+
+  font-size: 0.85rem;
+
+  letter-spacing: 2px;
+
+  font-weight: 600;
+}
+
+.offer-content h2 {
+  margin: 1rem 0;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  color: var(--text-primary);
+}
+
+.offer-content p {
+  max-width: 600px;
+
+  margin: 0 auto 2rem;
+
+  color: var(--text-secondary);
+
+  line-height: 1.8;
+}
