@@ -1,5 +1,10 @@
 <div class="product-search">
   <span class="material-icons search-icon"> search </span>
 
-  <input type="text" placeholder="Search products..." />
+  <input
+    type="text"
+    placeholder="Search products..."
+    (input)="onSearchChange($event)"
+  />
+  <!-- <button (click)="onSearchClick()" class="search-btn">Search</button> -->
 </div>

@@ -20,7 +20,6 @@ export class ProductFilterComponent {
 
   applyFilter(value: string): void {
     this.selectedPrice = value;
-    console.log('Applying filter with max price:', value);
     this.filterChanged.emit(value);
     this.isOpen = false;
   }

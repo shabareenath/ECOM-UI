@@ -1,9 +1,9 @@
 import { Component, effect } from '@angular/core';
-import { ProductSearchComponent } from '../../components/product-search/product-search.component';
 import { ProductSortComponent } from '../../components/product-sort/product-sort.component';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { ProductFilterComponent } from '../../components/product-filter/product-filter.component';
 import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dialog-box.component';
+import { ProductSearchComponent } from '../../components/product-search/product-search.component';
 
 @Component({
   selector: 'app-product-list',
@@ -19,9 +19,10 @@ import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dia
 })
 export class ProductListComponent {
   activeSort = 'latest';
-
+  searchText = '';
   selectedMaxPrice = '';
-  isDeleteDialogOpen = false;
+  isSearchDialogOpen = false;
+  isFilterDialogOpen = false;
   products = [
     {
       id: 1,
@@ -29,6 +30,7 @@ export class ProductListComponent {
       price: 999,
       image: 'assets/featured1.jpeg',
       rating: 4.8,
+      category: 'tshirt',
     },
     {
       id: 2,
@@ -36,6 +38,7 @@ export class ProductListComponent {
       price: 899,
       image: 'assets/featured2.jpeg',
       rating: 4.7,
+      category: 'tshirt',
     },
     {
       id: 3,
@@ -43,6 +46,7 @@ export class ProductListComponent {
       price: 1199,
       image: 'assets/featured3.jpeg',
       rating: 4.9,
+      category: 'tshirt',
     },
     {
       id: 4,
@@ -50,6 +54,7 @@ export class ProductListComponent {
       price: 1299,
       image: 'assets/featured4.jpeg',
       rating: 4.8,
+      category: 'tshirt',
     },
     {
       id: 5,
@@ -57,6 +62,7 @@ export class ProductListComponent {
       price: 1099,
       image: 'assets/featured1.jpeg',
       rating: 4.6,
+      category: 'tshirt',
     },
     {
       id: 6,
@@ -64,6 +70,7 @@ export class ProductListComponent {
       price: 999,
       image: 'assets/featured2.jpeg',
       rating: 4.7,
+      category: 'tshirt',
     },
     {
       id: 7,
@@ -71,6 +78,7 @@ export class ProductListComponent {
       price: 1399,
       image: 'assets/featured3.jpeg',
       rating: 4.9,
+      category: 'tshirt',
     },
     {
       id: 8,
@@ -78,21 +86,19 @@ export class ProductListComponent {
       price: 1199,
       image: 'assets/featured4.jpeg',
       rating: 4.8,
+      category: 'tshirt',
     },
   ];
-  constructor() {
-    effect(() => {
-      console.log('Current filtered products:', this.filteredProducts);
-    });
-  }
+
   filteredProducts = [...this.products];
   private checkEmptyState(): void {
-    this.isDeleteDialogOpen = this.filteredProducts.length === 0;
+    this.isFilterDialogOpen = this.filteredProducts.length === 0;
+  }
+  private checkEmptyStateForSearch(): void {
+    this.isSearchDialogOpen = this.filteredProducts.length === 0;
   }
   applyFilter(value: string): void {
-    console.log('Applying filter with max price:', value);
     this.selectedMaxPrice = value;
-    console.log('Selected max price:', this.selectedMaxPrice);
     switch (value) {
       case 'under999':
         this.filteredProducts = this.products.filter((p) => p.price < 999);
@@ -148,8 +154,28 @@ export class ProductListComponent {
 
     this.filteredProducts = products;
   }
+  updateProducts(value: string): void {
+    let result = [...this.products];
+
+    this.searchText = value.trim();
+
+    if (this.searchText) {
+      result = result.filter(
+        (product) =>
+          product.name.toLowerCase().includes(this.searchText.toLowerCase()) ||
+          product.category
+            .toLowerCase()
+            .includes(this.searchText.toLowerCase()),
+      );
+    }
+
+    this.filteredProducts = result;
+
+    this.checkEmptyStateForSearch();
+  }
   onDialogClose() {
-    this.isDeleteDialogOpen = false;
+    this.isFilterDialogOpen = false;
+    this.isSearchDialogOpen = false;
     if (this.filteredProducts.length == 0) {
       this.filteredProducts = [...this.products];
     }

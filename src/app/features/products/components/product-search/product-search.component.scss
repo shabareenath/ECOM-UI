@@ -1,8 +1,8 @@
 .product-search {
   position: relative;
-
+  display: flex;
   width: 100%;
-
+  gap: 10px;
   margin-bottom: 2rem;
 }
 
@@ -47,4 +47,19 @@
 
 .product-search input::placeholder {
   color: var(--text-secondary);
+}
+.search-btn {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--surface-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  padding: 0 1rem 0 1rem;
+  cursor: pointer;
+  &:hover {
+    scale: 1.05;
+    transition: 0.3s ease;
+  }
 }

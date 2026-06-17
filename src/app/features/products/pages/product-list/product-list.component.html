@@ -1,5 +1,7 @@
 <div class="products-list-container">
-  <app-product-search></app-product-search>
+  <app-product-search
+    (searchChanged)="updateProducts($event)"
+  ></app-product-search>
   <div class="filter-sort-container">
     <app-product-filter (filterChanged)="applyFilter($event)">
     </app-product-filter>
@@ -13,12 +15,26 @@
   </div>
 </div>
 
+<!-- filter empty dialog -->
 <app-dialog-box
   title="Hi User"
-  [isOpen]="isDeleteDialogOpen"
+  [isOpen]="isFilterDialogOpen"
   (closed)="onDialogClose()"
 >
   <p>No products in the selected price range.</p>
+
+  <div class="dialog-actions">
+    <button (click)="onDialogClose()">okay</button>
+  </div>
+</app-dialog-box>
+
+<!-- search empty dialog -->
+<app-dialog-box
+  title="Hi User"
+  [isOpen]="isSearchDialogOpen"
+  (closed)="onDialogClose()"
+>
+  <p>No available products !</p>
 
   <div class="dialog-actions">
     <button (click)="onDialogClose()">okay</button>
