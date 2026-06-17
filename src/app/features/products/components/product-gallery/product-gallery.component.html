@@ -18,7 +18,7 @@
         </p>
 
         <div class="sizes">
-          <label class="size-btn">
+          <label class="size-btn" [class.active]="selectedSize === 'S'">
             <input
               type="radio"
               name="size"
@@ -28,7 +28,7 @@
             S
           </label>
 
-          <label class="size-btn">
+          <label class="size-btn" [class.active]="selectedSize === 'M'">
             <input
               type="radio"
               name="size"
@@ -37,7 +37,7 @@
             />M
           </label>
 
-          <label class="size-btn">
+          <label class="size-btn" [class.active]="selectedSize === 'L'">
             <input
               type="radio"
               name="size"
@@ -47,7 +47,7 @@
             L
           </label>
 
-          <label class="size-btn">
+          <label class="size-btn" [class.active]="selectedSize === 'XL'">
             <input
               type="radio"
               name="size"

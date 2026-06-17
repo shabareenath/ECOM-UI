@@ -91,7 +91,16 @@
 
   transition: 0.25s ease;
 }
+.size-btn input {
+  display: none;
+}
+.size-btn.active {
+  background: var(--accent-primary);
 
+  color: #000;
+
+  border-color: var(--accent-primary);
+}
 .size-btn:hover,
 .size-btn.active {
   background: var(--accent-primary);
