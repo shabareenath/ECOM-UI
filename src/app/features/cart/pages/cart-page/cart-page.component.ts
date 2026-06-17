@@ -26,7 +26,12 @@ export class CartPageComponent {
       error: (err: any) => console.error(err),
     });
   }
-
+  get subtotal(): number {
+    return this.cartItems.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0,
+    );
+  }
   updateQuantity(event: { id: number; quantity: number }): void {
     console.log('Quantity Updated', event);
   }

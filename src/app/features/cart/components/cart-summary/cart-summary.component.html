@@ -1,1 +1,25 @@
-cart-summary placeholder
+<div class="cart-summary">
+  <h2>Order Summary</h2>
+
+  <div class="summary-row">
+    <span>Subtotal</span>
+    <span>₹{{ subtotal }}</span>
+  </div>
+
+  <div class="summary-row">
+    <span>Shipping</span>
+    <span>₹{{ shipping }}</span>
+  </div>
+
+  <div class="summary-row">
+    <span>Tax</span>
+    <span>₹{{ tax }}</span>
+  </div>
+
+  <div class="summary-row total">
+    <span>Total</span>
+    <span>₹{{ total }}</span>
+  </div>
+
+  <button class="checkout-btn">Proceed To Checkout</button>
+</div>
