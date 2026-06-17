@@ -1,1 +1,23 @@
-<!-- product-card placeholder -->
+<article class="product-card">
+  <div class="product-image">
+    <img [src]="product.image" [alt]="product.name" />
+  </div>
+
+  <div class="product-content">
+    <h3>
+      {{ product.name }}
+    </h3>
+
+    <div class="product-price">₹{{ product.price }}</div>
+
+    <div class="product-rating">
+      ★★★★★
+
+      <span>
+        {{ product.rating }}
+      </span>
+    </div>
+
+    <button class="add-cart-btn">Add To Cart</button>
+  </div>
+</article>

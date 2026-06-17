@@ -7,3 +7,21 @@
   justify-content: flex-end;
   gap: 1rem;
 }
+.product-list-container {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 1.5rem;
+}
+.dialog-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    all: unset;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+}

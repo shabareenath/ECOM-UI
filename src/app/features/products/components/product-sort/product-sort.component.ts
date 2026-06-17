@@ -1,4 +1,10 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-product-sort',
@@ -10,7 +16,7 @@ export class ProductSortComponent {
   isOpen = false;
 
   selectedSort = 'Latest';
-
+  @Output() sortChanged = new EventEmitter<string>();
   constructor(private elementRef: ElementRef) {}
 
   toggleSort(): void {
@@ -19,7 +25,7 @@ export class ProductSortComponent {
 
   selectSort(value: string): void {
     this.selectedSort = value;
-
+    this.sortChanged.emit(value);
     this.isOpen = false;
   }
 

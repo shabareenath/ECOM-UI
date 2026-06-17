@@ -1,9 +1,26 @@
 <div class="products-list-container">
   <app-product-search></app-product-search>
-  <app-product-gallery></app-product-gallery>
   <div class="filter-sort-container">
-    <app-product-filter> </app-product-filter>
+    <app-product-filter (filterChanged)="applyFilter($event)">
+    </app-product-filter>
 
-    <app-product-sort></app-product-sort>
+    <app-product-sort (sortChanged)="applySort($event)"> </app-product-sort>
+  </div>
+  <div class="product-list-container">
+    @for (product of filteredProducts; track product.id) {
+      <app-product-card [product]="product"> </app-product-card>
+    }
   </div>
 </div>
+
+<app-dialog-box
+  title="Hi User"
+  [isOpen]="isDeleteDialogOpen"
+  (closed)="onDialogClose()"
+>
+  <p>No products in the selected price range.</p>
+
+  <div class="dialog-actions">
+    <button (click)="onDialogClose()">okay</button>
+  </div>
+</app-dialog-box>

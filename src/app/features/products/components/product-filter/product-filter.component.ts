@@ -1,4 +1,10 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-product-filter',
@@ -8,9 +14,16 @@ import { Component, ElementRef, HostListener } from '@angular/core';
 })
 export class ProductFilterComponent {
   isOpen = false;
-
+  selectedPrice = '';
+  @Output() filterChanged = new EventEmitter<string>();
   constructor(private elementRef: ElementRef) {}
 
+  applyFilter(value: string): void {
+    this.selectedPrice = value;
+    console.log('Applying filter with max price:', value);
+    this.filterChanged.emit(value);
+    this.isOpen = false;
+  }
   toggleFilter(): void {
     this.isOpen = !this.isOpen;
   }

@@ -7,7 +7,7 @@
 
   @if (isOpen) {
     <div class="filter-dropdown">
-      <div class="filter-section">
+      <!-- <div class="filter-section">
         <h4>Categories</h4>
 
         <label>
@@ -24,23 +24,66 @@
           <input type="checkbox" />
           Essentials
         </label>
-      </div>
+      </div> -->
 
       <div class="filter-section">
         <h4>Price</h4>
 
         <label>
-          <input type="checkbox" />
+          <input
+            name="price"
+            value="under999"
+            type="radio"
+            [checked]="selectedPrice === 'under999'"
+            (change)="applyFilter('under999')"
+          />
           Under ₹999
         </label>
 
         <label>
-          <input type="checkbox" />
+          <input
+            name="price"
+            value="999-1499"
+            type="radio"
+            [checked]="selectedPrice === '999-1499'"
+            (change)="applyFilter('999-1499')"
+          />
           ₹999 - ₹1499
+        </label>
+
+        <label>
+          <input
+            name="price"
+            value="1500-1999"
+            type="radio"
+            [checked]="selectedPrice === '1500-1999'"
+            (change)="applyFilter('1500-1999')"
+          />
+          ₹1500 - ₹1999
+        </label>
+        <label>
+          <input
+            value="above2000"
+            type="radio"
+            [checked]="selectedPrice === 'above2000'"
+            (change)="applyFilter('above2000')"
+            name="price"
+          />
+          Above ₹2000
+        </label>
+        <label>
+          <input
+            value="removeFilter"
+            type="radio"
+            [checked]="selectedPrice === 'removeFilter'"
+            (change)="applyFilter('removeFilter')"
+            name="price"
+          />
+          Remove Filter
         </label>
       </div>
 
-      <div class="filter-section">
+      <!-- <div class="filter-section">
         <h4>Size</h4>
 
         <label>
@@ -62,7 +105,7 @@
           <input type="checkbox" />
           XL
         </label>
-      </div>
+      </div> -->
     </div>
   }
 </div>

@@ -1,0 +1,17 @@
+@if (isOpen) {
+  <div class="dialog-overlay" (click)="close()">
+    <div class="dialog-container" (click)="$event.stopPropagation()">
+      <div class="dialog-header">
+        <h3>{{ title }}</h3>
+
+        <button class="close-btn" (click)="close()" aria-label="Close">
+          <span class="material-icons"> close </span>
+        </button>
+      </div>
+
+      <div class="dialog-body">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+}
