@@ -1,1 +1,27 @@
-<p>profile-page works!</p>
+@for (user of users; track user.id) {
+  <section class="profile-page">
+    <div class="profile-card">
+      <div class="profile-avatar">
+        <span>{{ user.name.charAt(0) }}</span>
+      </div>
+
+      <h2>{{ user.name }}</h2>
+
+      <p>{{ user.email }}</p>
+
+      <p>{{ user.phone }}</p>
+    </div>
+
+    <div class="profile-menu">
+      <button>My Orders</button>
+
+      <button>Wishlist</button>
+
+      <button>Addresses</button>
+
+      <button>Account Settings</button>
+
+      <button class="logout-btn">Logout</button>
+    </div>
+  </section>
+}
