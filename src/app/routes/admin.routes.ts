@@ -3,8 +3,8 @@ import { Routes } from '@angular/router';
 import { AdminDashboardComponent } from '../admin/pages/dashboard/dashboard.component';
 import { ProductsManagementComponent } from '../admin/pages/products-management/products-management.component';
 import { ProductCreateComponent } from '../admin/pages/product-create/product-create.component';
-import { ProductListComponent } from '../admin/pages/product-list/product-list.component';
 import { ProductEditComponent } from '../admin/components/product-edit/product-edit.component';
+import { ProductListComponent } from '../features/products/pages/product-list/product-list.component';
 
 export const ADMIN_ROUTES: Routes = [
   {

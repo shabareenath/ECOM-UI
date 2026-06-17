@@ -10,6 +10,6 @@ export class OrderService {
   private http = inject(HttpClient);
 
   getOrders(): any {
-    return this.http.get<Product[]>('assets/mock-data/orderstDB.json');
+    return this.http.get<Product[]>('assets/mock-data/ordersDB.json');
   }
 }

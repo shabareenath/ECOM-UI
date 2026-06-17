@@ -1,1 +1,25 @@
-<p>Orders list works!</p>
+<div class="order-list-contianer">
+  @for (order of orderItems; track order.id) {
+    <div class="order-card">
+      <div class="order-header">
+        <h3>Order #{{ order.id }}</h3>
+
+        <span class="status">
+          {{ order.status }}
+        </span>
+      </div>
+
+      <p>{{ order.createdAt }}</p>
+
+      <p>Total: ₹{{ order.total }}</p>
+
+      <div class="items">
+        @for (item of order.items; track item.id) {
+          <p>{{ item.name }} × {{ item.quantity }}</p>
+        }
+      </div>
+
+      <button>View Details</button>
+    </div>
+  }
+</div>
