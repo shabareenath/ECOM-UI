@@ -10,7 +10,8 @@
   </div>
   <div class="product-list-container">
     @for (product of filteredProducts; track product.id) {
-      <app-product-card [product]="product"> </app-product-card>
+      <app-product-card [product]="product" (click)="goToProduct(product.id)">
+      </app-product-card>
     }
   </div>
 </div>

@@ -4,6 +4,7 @@ import { ProductCardComponent } from '../../components/product-card/product-card
 import { ProductFilterComponent } from '../../components/product-filter/product-filter.component';
 import { DialogBoxComponent } from '../../../../shared/components/dialog-box/dialog-box.component';
 import { ProductSearchComponent } from '../../components/product-search/product-search.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -18,6 +19,11 @@ import { ProductSearchComponent } from '../../components/product-search/product-
   ],
 })
 export class ProductListComponent {
+  constructor(private router: Router) {}
+
+  goToProduct(id: number): void {
+    this.router.navigate(['/products', id]);
+  }
   activeSort = 'latest';
   searchText = '';
   selectedMaxPrice = '';
