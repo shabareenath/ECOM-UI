@@ -1,1 +1,9 @@
-<!-- related-products placeholder -->
+<section class="related-products">
+  <h2>You May Also Like</h2>
+
+  <div class="related-products-grid">
+    @for (product of relatedProducts; track product.id) {
+      <app-product-card [product]="product"> </app-product-card>
+    }
+  </div>
+</section>
