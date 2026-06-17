@@ -1,34 +1,82 @@
-<section class="product-details">
-  <div class="product-layout">
-    <div class="product-gallery">
-      <img src="assets/featured1.jpeg" alt="Oversized Black Tee" />
-    </div>
-
-    <div class="product-info">
-      <h1>Oversized Black Tee</h1>
-
-      <div class="rating">⭐ 4.8</div>
-
-      <div class="price">₹999</div>
-
-      <p class="description">
-        Premium oversized essential crafted for comfort and everyday confidence.
-      </p>
-
-      <div class="sizes">
-        <button class="size-btn">S</button>
-        <button class="size-btn">M</button>
-        <button class="size-btn">L</button>
-        <button class="size-btn">XL</button>
+<form #productForm="ngForm" (ngSubmit)="addToCart()">
+  <section class="product-details">
+    <div class="product-layout">
+      <div class="product-gallery">
+        <img src="assets/featured1.jpeg" alt="Oversized Black Tee" />
       </div>
 
-      <div class="actions">
-        <button class="add-cart-btn">Add To Cart</button>
+      <div class="product-info">
+        <h1>{{ product.name }}</h1>
 
-        <button class="buy-now-btn">Buy Now</button>
+        <div class="rating">⭐ {{ product.rating }}</div>
+
+        <div class="price">₹{{ product.price }}</div>
+
+        <p class="description">
+          Premium oversized essential crafted for comfort and everyday
+          confidence.
+        </p>
+
+        <div class="sizes">
+          <label class="size-btn">
+            <input
+              type="radio"
+              name="size"
+              value="S"
+              [(ngModel)]="selectedSize"
+            />
+            S
+          </label>
+
+          <label class="size-btn">
+            <input
+              type="radio"
+              name="size"
+              value="M"
+              [(ngModel)]="selectedSize"
+            />
+          </label>
+
+          <label class="size-btn">
+            <input
+              type="radio"
+              name="size"
+              value="L"
+              [(ngModel)]="selectedSize"
+            />
+            L
+          </label>
+
+          <label class="size-btn">
+            <input
+              type="radio"
+              name="size"
+              value="XL"
+              [(ngModel)]="selectedSize"
+            />
+            XL
+          </label>
+        </div>
+        <div class="quantity">
+          <label>Quantity</label>
+
+          <div class="quantity-controls">
+            <button type="button" (click)="decreaseQuantity()">-</button>
+
+            <input name="quantity" [(ngModel)]="quantity" min="1" />
+
+            <button type="button" (click)="increaseQuantity()">+</button>
+          </div>
+        </div>
+        <div class="actions">
+          <button type="submit" class="add-cart-btn">Add To Cart</button>
+
+          <button type="submit" class="buy-now-btn" (click)="buyNow()">
+            Buy Now
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-
-  <app-related-products></app-related-products>
-</section>
+    <app-related-products></app-related-products>
+  </section>
+</form>

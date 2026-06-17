@@ -74,7 +74,9 @@
 
 .size-btn {
   width: 50px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
 
   border: 1px solid var(--border-primary);
@@ -132,7 +134,59 @@
 
   color: #000;
 }
+.quantity {
+  display: flex;
 
+  flex-direction: column;
+
+  gap: 0.75rem;
+}
+
+.quantity label {
+  color: var(--text-primary);
+
+  font-weight: 600;
+}
+
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.quantity-controls button {
+  width: 40px;
+
+  height: 40px;
+
+  border: 1px solid var(--border-primary);
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  cursor: pointer;
+}
+
+.quantity-controls input {
+  width: 70px;
+
+  text-align: center;
+
+  border: 1px solid var(--border-primary);
+
+  border-radius: 8px;
+
+  background: var(--surface-primary);
+
+  color: var(--text-primary);
+
+  padding: 0.6rem;
+}
 /* =========================
    TABLET
 ========================= */
