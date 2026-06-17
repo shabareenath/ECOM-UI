@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Oversized Black Tee",
+    "image": "assets/featured1.jpeg",
+    "price": 999,
+    "size": "L",
+    "quantity": 2
+  },
+  {
+    "id": 2,
+    "name": "Premium Brown Oversized Tee",
+    "image": "assets/featured3.jpeg",
+    "price": 1199,
+    "size": "XL",
+    "quantity": 1
+  },
+  {
+    "id": 3,
+    "name": "Classic Navy Tee",
+    "image": "assets/featured2.jpeg",
+    "price": 999,
+    "size": "M",
+    "quantity": 3
+  }
+]

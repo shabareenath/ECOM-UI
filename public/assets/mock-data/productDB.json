@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Oversized Black Tee",
+    "price": 999,
+    "image": "assets/featured1.jpeg",
+    "rating": 4.8,
+    "category": "tshirt"
+  },
+  {
+    "id": 2,
+    "name": "Essential White Tee",
+    "price": 899,
+    "image": "assets/featured2.jpeg",
+    "rating": 4.7,
+    "category": "tshirt"
+  },
+  {
+    "id": 3,
+    "name": "Premium Brown Oversized Tee",
+    "price": 1199,
+    "image": "assets/featured3.jpeg",
+    "rating": 4.9,
+    "category": "tshirt"
+  },
+  {
+    "id": 4,
+    "name": "Graphic Streetwear Tee",
+    "price": 1299,
+    "image": "assets/featured4.jpeg",
+    "rating": 4.8,
+    "category": "tshirt"
+  },
+  {
+    "id": 5,
+    "name": "Urban Grey Oversized Tee",
+    "price": 1099,
+    "image": "assets/featured1.jpeg",
+    "rating": 4.6,
+    "category": "tshirt"
+  },
+  {
+    "id": 6,
+    "name": "Classic Navy Tee",
+    "price": 999,
+    "image": "assets/featured2.jpeg",
+    "rating": 4.7,
+    "category": "tshirt"
+  },
+  {
+    "id": 7,
+    "name": "Premium Olive Tee",
+    "price": 1399,
+    "image": "assets/featured3.jpeg",
+    "rating": 4.9,
+    "category": "tshirt"
+  },
+  {
+    "id": 8,
+    "name": "Minimal Beige Oversized Tee",
+    "price": 1199,
+    "image": "assets/featured4.jpeg",
+    "rating": 4.8,
+    "category": "tshirt"
+  }
+]

@@ -1,1 +1,38 @@
-<!-- cart-item placeholder -->
+<form #cartForm="ngForm" (ngSubmit)="updateCart()">
+  <div class="cart-item">
+    <div class="cart-image">
+      <img [src]="item.image" [alt]="item.name" />
+    </div>
+
+    <div class="cart-details">
+      <h3>{{ item.name }}</h3>
+
+      <p class="size">Size: {{ item.size }}</p>
+
+      <div class="price">₹{{ item.price }}</div>
+
+      <div class="quantity-controls">
+        <button type="button" (click)="decreaseQuantity()">-</button>
+
+        <input
+          type="number"
+          name="quantity"
+          [(ngModel)]="item.quantity"
+          min="1"
+        />
+
+        <button type="button" (click)="increaseQuantity()">+</button>
+      </div>
+    </div>
+
+    <div class="cart-actions">
+      <div class="total">₹{{ item.price * item.quantity }}</div>
+
+      <button type="button" class="remove-btn" (click)="removeItem()">
+        Remove
+      </button>
+
+      <button type="submit" class="save-btn">Update</button>
+    </div>
+  </div>
+</form>

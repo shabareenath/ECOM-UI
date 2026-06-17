@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1001,
+    "userId": 1,
+    "items": [
+      {
+        "productId": 1,
+        "name": "Oversized Black Tee",
+        "price": 999,
+        "size": "L",
+        "quantity": 2
+      }
+    ],
+    "subtotal": 1998,
+    "shipping": 99,
+    "total": 2097,
+    "status": "Delivered",
+    "createdAt": "2026-06-17"
+  }
+]

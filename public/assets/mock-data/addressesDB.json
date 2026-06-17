@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Shabareenath",
+    "phone": "9999999999",
+    "addressLine1": "House Name",
+    "addressLine2": "Near Infopark",
+    "city": "Kochi",
+    "state": "Kerala",
+    "pincode": "682030",
+    "country": "India",
+    "isDefault": true
+  }
+]

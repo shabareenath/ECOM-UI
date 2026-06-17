@@ -1,11 +1,8 @@
-import { Product } from './product.model';
-
 export interface CartItem {
-  product: Product;
+  id: number;
+  name: string;
+  image: string;
+  price: number;
   quantity: number;
-}
-
-export interface Cart {
-  items: CartItem[];
-  total: number;
+  size: string;
 }
