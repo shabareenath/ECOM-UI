@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { WishlistComponent } from './features/wishlist/wishlist/wishlist.component';
+import { AddressesesComponent } from './features/checkout/components/addresseses/addresseses.component';
 
 export const routes: Routes = [
   {
@@ -46,9 +48,5 @@ export const routes: Routes = [
     path: 'profile',
     loadChildren: () =>
       import('././routes/profile.routes').then((m) => m.PROFILE_ROUTES),
-  },
-  {
-    path: '**',
-    redirectTo: '',
   },
 ];

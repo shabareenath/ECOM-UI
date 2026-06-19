@@ -1,0 +1,23 @@
+<section class="address-page">
+  <h1>My Addresses</h1>
+
+  <div class="address-list">
+    @for (address of addresses; track address.id) {
+      <div class="address-card">
+        @if (address.isDefault) {
+          <span class="default-badge"> Default </span>
+        }
+
+        <h3>{{ address.name }}</h3>
+
+        <p>
+          {{ address.addressLine1 }} ,{{ address.addressLine2 }} ,
+          {{ address.city }} , {{ address.state }} ,{{ address.pincode }} ,{{
+            address.country
+          }},
+          {{ address.phone }}
+        </p>
+      </div>
+    }
+  </div>
+</section>

@@ -10,5 +10,17 @@
     "pincode": "682030",
     "country": "India",
     "isDefault": true
+  },
+  {
+    "id": 2,
+    "name": "U J ",
+    "phone": "1234567890",
+    "addressLine1": " abcde",
+    "addressLine2": "delhi",
+    "city": "gurgaon",
+    "state": "delhi",
+    "pincode": "121221",
+    "country": "India",
+    "isDefault": false
   }
 ]
