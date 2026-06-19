@@ -1,1 +1,27 @@
-<p>wishlist works!</p>
+<section class="wishlist-page">
+  <h1>My Wishlist</h1>
+
+  <div class="wishlist-grid">
+    @for (item of wishlistItems; track item.id) {
+      <div class="wishlist-card">
+        <img [src]="item.image" [alt]="item.name" />
+
+        <h3>{{ item.name }}</h3>
+
+        <div class="rating">⭐ {{ item.rating }}</div>
+
+        <div class="price">₹{{ item.price }}</div>
+
+        <div class="actions">
+          <button class="cart-btn" (click)="addToCart(item)">
+            Add To Cart
+          </button>
+
+          <button class="remove-btn" (click)="removeFromWishlist(item.id)">
+            Remove
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</section>

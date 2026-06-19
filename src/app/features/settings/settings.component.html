@@ -1,1 +1,61 @@
-<p>settings works!</p>
+<form #settingsForm="ngForm" (ngSubmit)="saveChanges()">
+  <section class="settings-page">
+    <h1>Account Settings</h1>
+
+    <div class="settings-card">
+      <h3>Personal Information</h3>
+
+      <label>
+        Full Name
+        <input type="text" name="fullName" [(ngModel)]="user.fullName" />
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" [(ngModel)]="user.email" />
+      </label>
+
+      <label>
+        Phone Number
+        <input type="text" name="phone" [(ngModel)]="user.phone" />
+      </label>
+    </div>
+
+    <div class="settings-card">
+      <h3>Password</h3>
+
+      <label>
+        Current Password
+        <input
+          type="password"
+          name="currentPassword"
+          [(ngModel)]="password.currentPassword"
+        />
+      </label>
+
+      <label>
+        New Password
+        <input
+          type="password"
+          name="newPassword"
+          [(ngModel)]="password.newPassword"
+        />
+      </label>
+
+      <label>
+        Confirm Password
+        <input
+          type="password"
+          name="confirmPassword"
+          [(ngModel)]="password.confirmPassword"
+        />
+      </label>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="save-btn" [disabled]="settingsForm.invalid">
+        Save Changes
+      </button>
+    </div>
+  </section>
+</form>

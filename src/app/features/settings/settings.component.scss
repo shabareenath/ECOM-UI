@@ -1,0 +1,107 @@
+.settings-page {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 2rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+.settings-page h1 {
+  color: var(--text-primary);
+}
+
+.settings-card {
+  padding: 1.5rem;
+
+  border-radius: 16px;
+
+  background: var(--surface-primary);
+
+  border: 1px solid var(--border-primary);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+.settings-card h3 {
+  margin: 0 0 1rem;
+
+  color: var(--text-primary);
+}
+
+.settings-card label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.5rem;
+
+  color: var(--text-secondary);
+}
+
+.settings-card input {
+  padding: 0.9rem;
+
+  border: 1px solid var(--border-primary);
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  outline: none;
+}
+
+.settings-card input:focus {
+  border-color: var(--accent-primary);
+}
+
+.actions {
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+.save-btn {
+  padding: 1rem 1.5rem;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: var(--accent-primary);
+
+  color: #000;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .settings-page {
+    padding: 1rem;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+
+  .save-btn {
+    width: 100%;
+  }
+}

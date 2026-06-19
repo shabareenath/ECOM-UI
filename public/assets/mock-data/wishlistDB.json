@@ -1,10 +1,34 @@
 [
   {
     "id": 1,
-    "productId": 2
+    "productId": 1,
+    "name": "Oversized Black Tee",
+    "image": "assets/featured1.jpeg",
+    "price": 999,
+    "rating": 4.8
   },
   {
     "id": 2,
-    "productId": 5
+    "productId": 2,
+    "name": "Premium Brown Oversized Tee",
+    "image": "assets/featured3.jpeg",
+    "price": 1199,
+    "rating": 4.9
+  },
+  {
+    "id": 3,
+    "productId": 3,
+    "name": "Premium Brown Oversized Tee",
+    "image": "assets/featured3.jpeg",
+    "price": 1199,
+    "rating": 4.9
+  },
+  {
+    "id": 4,
+    "productId": 4,
+    "name": "Premium Brown Oversized Tee",
+    "image": "assets/featured3.jpeg",
+    "price": 1199,
+    "rating": 4.9
   }
 ]
