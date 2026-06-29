@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { OrderService } from '../../../../core/services/order.service';
 import { Order } from '../../../../core/models/order.model';
 
@@ -7,6 +7,7 @@ import { Order } from '../../../../core/models/order.model';
   selector: 'app-order-details',
   templateUrl: './order-details.component.html',
   styleUrl: './order-details.component.scss',
+  imports: [RouterLink],
 })
 export class OrderDetailsComponent implements OnInit {
   private route = inject(ActivatedRoute);

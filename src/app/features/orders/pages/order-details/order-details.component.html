@@ -1,6 +1,8 @@
 <section class="order-details">
   <div class="page-header">
-    <button class="back-btn">← Back to Orders</button>
+    <a href="/orders">
+      <button class="back-btn">← Back to Orders</button>
+    </a>
 
     <div class="order-info">
       <h1>Order #{{ order?.id }}</h1>
@@ -26,8 +28,6 @@
 
             <div class="details">
               <h3>{{ item.name }}</h3>
-
-              <p>{{ item.brand }}</p>
 
               <div class="meta">
                 <span>Size : {{ item.size }}</span>
@@ -115,8 +115,9 @@
         </div>
 
         <button class="primary">Download Invoice</button>
-
-        <button class="secondary">Buy Again</button>
+        <a [routerLink]="['/products', order?.id]">
+          <button class="secondary">Buy Again</button>
+        </a>
       </div>
     </div>
   </div>
