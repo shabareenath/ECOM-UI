@@ -1,22 +1,94 @@
 <section class="address-page">
-  <h1>My Addresses</h1>
+  <div class="page-header">
+    <h1>My Addresses</h1>
+
+    <button class="add-btn" (click)="showForm = !showForm">
+      + Add New Address
+    </button>
+  </div>
+
+  @if (showForm) {
+    <div class="address-form">
+      <h2>Add Address</h2>
+
+      <div class="form-grid">
+        <input
+          type="text"
+          placeholder="Full Name"
+          [(ngModel)]="newAddress.name"
+        />
+
+        <input
+          type="text"
+          placeholder="Phone Number"
+          [(ngModel)]="newAddress.phone"
+        />
+
+        <input
+          type="text"
+          placeholder="Address Line 1"
+          [(ngModel)]="newAddress.addressLine1"
+        />
+
+        <input
+          type="text"
+          placeholder="Address Line 2"
+          [(ngModel)]="newAddress.addressLine2"
+        />
+
+        <input type="text" placeholder="City" [(ngModel)]="newAddress.city" />
+
+        <input type="text" placeholder="State" [(ngModel)]="newAddress.state" />
+
+        <input
+          type="text"
+          placeholder="Pincode"
+          [(ngModel)]="newAddress.pincode"
+        />
+
+        <input
+          type="text"
+          placeholder="Country"
+          [(ngModel)]="newAddress.country"
+        />
+      </div>
+
+      <label class="checkbox">
+        <input type="checkbox" [(ngModel)]="newAddress.isDefault" />
+
+        Set as Default
+      </label>
+
+      <div class="actions">
+        <button (click)="saveAddress()">Save</button>
+
+        <button type="button" (click)="showForm = false">Cancel</button>
+      </div>
+    </div>
+  }
 
   <div class="address-list">
     @for (address of addresses; track address.id) {
       <div class="address-card">
         @if (address.isDefault) {
-          <span class="default-badge"> Default </span>
+          <span class="default-badge">Default</span>
         }
 
         <h3>{{ address.name }}</h3>
 
         <p>
-          {{ address.addressLine1 }} ,{{ address.addressLine2 }} ,
-          {{ address.city }} , {{ address.state }} ,{{ address.pincode }} ,{{
-            address.country
-          }},
-          {{ address.phone }}
+          {{ address.addressLine1 }}, {{ address.addressLine2 }},
+          {{ address.city }}, {{ address.state }}, {{ address.pincode }},
+          {{ address.country }}
         </p>
+
+        <p>{{ address.phone }}</p>
+
+        <div class="card-actions">
+          <button>Edit</button>
+
+          <button>Delete</button>
+        </div>
       </div>
     }
   </div>
