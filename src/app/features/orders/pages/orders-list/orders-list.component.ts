@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Order } from '../../../../core/models/order.model';
 import { OrderService } from '../../../../core/services/order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-orders-list',
@@ -11,7 +12,7 @@ export class OrdersListComponent implements OnInit {
   orderItems: Order[] = [];
 
   private orderService = inject(OrderService);
-
+  router = inject(Router);
   ngOnInit(): void {
     this.loadOrders();
   }
@@ -29,6 +30,7 @@ export class OrdersListComponent implements OnInit {
 
   viewDetails(orderId: number): void {
     console.log('View details for order:', orderId);
+    this.router.navigate(['/orders', orderId]);
 
     // Later:
     // this.router.navigate(['/orders', orderId]);

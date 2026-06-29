@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Product } from '../models/product.model';
+import { Observable, map } from 'rxjs';
+
+import { Order } from '../models/order.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,15 @@ import { Product } from '../models/product.model';
 export class OrderService {
   private http = inject(HttpClient);
 
-  getOrders(): any {
-    return this.http.get<Product[]>('assets/mock-data/ordersDB.json');
+  private readonly ordersUrl = 'assets/mock-data/ordersDB.json';
+
+  getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.ordersUrl);
+  }
+
+  getOrderById(id: number): Observable<Order | undefined> {
+    return this.getOrders().pipe(
+      map((orders) => orders.find((order) => order.id === id)),
+    );
   }
 }

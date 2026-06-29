@@ -17,6 +17,57 @@
     "tax": 100,
     "total": 2197,
     "status": "Delivered",
-    "createdAt": "2026-06-18"
+    "paymentMethod": "Credit Card",
+    "orderDate": "18 Jun 2026",
+    "createdAt": "2026-06-18",
+    "discount": 100,
+    "shippingAddress": {
+      "id": 1,
+      "name": "John Doe",
+      "phone": "9876543210",
+      "addressLine1": "221B Baker Street",
+      "addressLine2": "Near Metro Station",
+      "city": "Delhi",
+      "state": "Delhi",
+      "country": "India",
+      "pincode": "110001",
+      "isDefault": true
+    }
+  },
+  {
+    "id": 1002,
+    "items": [
+      {
+        "id": 2,
+        "productId": 2,
+        "name": "Oversized Red Tee",
+        "image": "assets/featured2.jpeg",
+        "price": 899,
+        "size": "L",
+        "quantity": 2
+      }
+    ],
+    "subtotal": 1798,
+    "shipping": 99,
+    "tax": 100,
+    "total": 1997,
+    "status": "Processing",
+    "paymentMethod": "UPI",
+    "orderDate": "21 Jun 2026",
+    "createdAt": "2026-06-21",
+    "discount": 100,
+
+    "shippingAddress": {
+      "id": 2,
+      "name": "John Doe",
+      "phone": "9876543210",
+      "addressLine1": "MG Road",
+      "addressLine2": "Near Lulu Mall",
+      "city": "Kochi",
+      "state": "Kerala",
+      "country": "India",
+      "pincode": "682021",
+      "isDefault": true
+    }
   }
 ]
